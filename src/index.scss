@@ -8,5 +8,17 @@ body {
     font-family: "Barlow Semi Condensed", sans-serif;
     background: $Radial-Gradient;
     min-height: 100vh;
-    color: white;
+    color: $white;
+    position: relative;
 }
+.container{
+    max-width: rrem(900);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: rrem(30);
+    padding-right: rrem(30);
+}
+input:focus{
+    outline: none;
+}
+

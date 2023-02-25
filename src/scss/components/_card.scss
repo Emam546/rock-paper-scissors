@@ -1,0 +1,87 @@
+@import "../../custom";
+$circle-radius: rem(130);
+$img-size: rem(50);
+.box-choice {
+    width: $circle-radius;
+    height: $circle-radius;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $white;
+    --background-color: red;
+    --bottom-color: green;
+    &::after {
+        content: "";
+        width: $img-size;
+        height: $img-size;
+        background-color: transparent;
+        
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: 1;
+    }
+    $border-radius: rem(15);
+    border: $border-radius solid var(--background-color);
+    &::before {
+        content: "";
+        position: absolute;
+        $size: calc(100% + $border-radius * 2);
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        z-index: -1;
+        border: 0 solid transparent;
+        border-bottom-width: rem(8);
+        border-bottom-color: var(--bottom-color);
+    }
+    &.PAPER {
+        --background-color: hsl(230, 89%, 62%);
+        --bottom-color: hsl(230, 89%, 55%);
+        &::after{
+            background-image: url("./images/icon-paper.svg");
+        }
+    }
+    &.SCISSORS {
+        --background-color: hsl(39, 89%, 57%);
+        --bottom-color: hsl(40, 84%, 45%);
+        &::after {
+            background-image: url("./images/icon-scissors.svg");
+        }
+    }
+    &.SPOCK {
+        --background-color: hsl(189, 59%, 53%);
+        --bottom-color: hsl(189, 58%, 40%);
+        &::after {
+            background-image: url("./images/icon-spock.svg");
+        }
+    }
+    &.LIZARD {
+        --background-color: hsl(261, 73%, 63%);
+        --bottom-color: hsl(261, 73%, 57%);
+        &::after {
+            background-image: url("./images/icon-lizard.svg");
+        }
+    }
+    &.ROCK {
+        --background-color: hsl(349, 70%, 56%);
+        --bottom-color: hsl(349, 70%, 50%);
+        &::after {
+            width: rem(50);
+            height: rem(50);
+            background-image: url("./images/icon-rock.svg");
+        }
+    }
+
+    &.empty{
+        border-color: transparent;
+        
+        background-color: hsl(220, 47%, 18%);
+        &::before{
+            display: none; 
+        }
+    }
+}

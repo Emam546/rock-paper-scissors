@@ -1,0 +1,80 @@
+@import "../custom";
+.rules {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    height: 100%;
+    padding: rem(40) rem(30);
+    z-index: 100;
+    .rule-button {
+        background-color: transparent;
+        border: rem(2) solid $Header-Outline;
+        padding: rem(10) rem(30);
+        font-size: rrem(17);
+        border-radius: rem(10);
+        font-weight: 700;
+        color: rgba($white, 0.8);
+        display: block;
+        cursor: pointer;
+        align-self: flex-end;
+    
+        @include media-break-mobile-down{
+            align-self: center;
+        } 
+    }
+    .rules-container {
+        position: absolute;
+        max-width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        border-radius: rrem(10);
+        background-color: $white;
+        color: $Dark-Text;
+        padding: rrem(30) rrem(30);
+        .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h1 {
+                margin: 0;
+                font-weight: 700;
+                font-size: rrem(30);
+            }
+            button {
+                height: fit-content;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+        }
+        > img {
+            display: block;
+            margin: rrem(30) auto;
+            width: fit-content;
+        }
+        @include media-break-mobile-down {
+            height: 100%;
+            width: 100%;
+            img {
+                max-width: 100%;
+            }
+            .head {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                h1 {
+                    margin: 0;
+                    font-weight: 700;
+                    font-size: rrem(30);
+                }
+                button {
+                    position: absolute;
+                    bottom: rem(150);
+                }
+            }
+        }
+    }
+}

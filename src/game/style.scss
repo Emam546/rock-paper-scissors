@@ -1,0 +1,63 @@
+@import "../custom";
+@import "../scss/components/card";
+.game {
+    position: relative;
+    & ~ * {
+        flex: 0 !important;
+    }
+    flex: 1;
+    .boxes {
+        display: flex;
+        justify-content: center;
+        gap: rem(30);
+        align-items: stretch;
+        flex-wrap: wrap;
+        .box {
+            font-size: rem(25);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: rem(25);
+            @include media-break-mobile-down {
+                flex-direction: column-reverse;
+            }
+        }
+        .win-lose-button {
+            width: fit-content;
+            align-self: center;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0 rrem(10);
+            margin-top: rem(40);
+            h2 {
+                width: fit-content;
+                margin: auto;
+                font-weight: 700;
+                font-size: rem(50);
+                margin-bottom: rem(5);
+            }
+            input {
+                min-width: none;
+                width: rem(40);
+                min-width: 100%;
+                background-color: white;
+                color: $Dark-Text;
+                text-align: center;
+                font-weight: 700;
+                font-size: rrem(20);
+                padding: rem(10) rem(1);
+                border-radius: rem(5);
+                cursor: pointer;
+                user-select: none;
+                
+            }
+            @include media-break-mobile-down {
+                position: absolute;
+                bottom: rem(40);
+                font-size: rem(35);
+            }
+        }
+    }
+}

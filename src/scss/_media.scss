@@ -1,10 +1,10 @@
 @mixin media-break-mobile-down{
-    @media (max-width:567px) {
+    @media (max-width:700px) {
         @content;
     }
 }
 @mixin media-break-mobile-up{
-    @media (min-width:567px) {
+    @media (min-width:700px) {
         @content;
     }
 }
