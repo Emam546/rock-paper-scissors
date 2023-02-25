@@ -1,0 +1,121 @@
+@import "../custom";
+main {
+    padding: rem(70) rem(30);
+}
+$circle-radius: rem(130);
+$img-size: rem(60);
+.landing {
+    width: fit-content;
+    margin: auto;
+    .boxes-container {
+        margin: calc($circle-radius / 2);
+        max-width: 100%;
+        width: fit-content;
+        height: fit-content;
+        position: relative;
+        
+        img {
+            width: rem(350);
+            max-width: 100%;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .box-choice {
+            position: absolute;
+            transform: translateX(-50%) translateY(-50%);
+            cursor: pointer;
+            &.scissor {
+                top: 0;
+                left: 50%;
+            }
+            &.paper {
+                top: 37%;
+                left: 95%;
+            }
+
+            &.spock {
+                top: 37%;
+                left: 5%;
+            }
+            &.lizard {
+                top: 90%;
+                left: 20%;
+            }
+            &.rock {
+                top: 90%;
+                left: 80%;
+            }
+        }
+    }
+}
+.box-choice {
+    width: $circle-radius;
+    height: $circle-radius;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $white;
+    --background-color: red;
+    --bottom-color: green;
+    &::after {
+        content: "";
+        width: $img-size;
+        height: $img-size;
+        background-color: white;
+        background-image: url("./images/icon-paper.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: 1;
+    }
+    $border-radius: rem(10);
+    border: $border-radius solid var(--background-color);
+    &::before {
+        content: "";
+        position: absolute;
+        $size: calc(100% + $border-radius * 2);
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        z-index: -1;
+        border: 0 solid transparent;
+        border-bottom-width: rem(8);
+        border-bottom-color: var(--bottom-color);
+    }
+    &.paper {
+        --background-color: hsl(230, 89%, 62%);
+        --bottom-color: hsl(230, 89%, 55%);
+    }
+    &.scissor {
+        --background-color: hsl(39, 89%, 57%);
+        --bottom-color: hsl(40, 84%, 45%);
+        &::after {
+            background-image: url("./images/icon-scissors.svg");
+        }
+    }
+    &.spock {
+        --background-color: hsl(189, 59%, 53%);
+        --bottom-color: hsl(189, 58%, 40%);
+        &::after {
+            background-image: url("./images/icon-spock.svg");
+        }
+    }
+    &.lizard {
+        --background-color: hsl(261, 73%, 63%);
+        --bottom-color: hsl(261, 73%, 57%);
+        &::after {
+            background-image: url("./images/icon-lizard.svg");
+        }
+    }
+    &.rock {
+        --background-color: hsl(349, 70%, 56%);
+        --bottom-color: hsl(349, 70%, 50%);
+        &::after {
+            width: rem(50);
+            height: rem(50);
+            background-image: url("./images/icon-rock.svg");
+        }
+    }
+}

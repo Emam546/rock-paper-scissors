@@ -1,0 +1,59 @@
+@import "../custom";
+.header{
+    margin: rem(50) 0;
+    padding:0 rem(30);
+    
+    .box{
+        max-width: rem(700);
+        min-height: rem(150);
+        border: rem(2) solid $Header-Outline;
+        border-radius: rem(20);
+        margin: auto;
+        padding: rem(20) rem(30);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .text-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            span{
+                display: block;
+                margin: 0;
+                font-size: rem(45);
+                text-transform: uppercase;
+                font-weight: 700;
+                line-height: rem(13);
+                letter-spacing: rem(0.5);
+            }
+        }
+        .score-container{
+            background-color: $white;
+            border-radius: rem(5);
+            width: rem(160);
+            max-width: 100%;
+            min-height: rem(110);
+            padding: rem(15);
+            span{
+                display: block;
+                width: fit-content;
+                margin: auto;
+                font-weight: 600;
+            }
+            .head{
+                color: $Score-Text;
+                display: block;
+                text-transform: uppercase;
+                letter-spacing: rem(2);
+                font-weight: 700;
+            }
+            .score{
+                font-size: rem(70);
+                color: $Dark-Text;
+                font-weight: 700;
+                line-height: rem(15);
+            }
+        }
+    }
+    
+}
