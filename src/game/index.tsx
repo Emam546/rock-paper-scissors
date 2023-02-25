@@ -9,9 +9,11 @@ export default function GameWining({
     card,
     setCard,
     lastCards,
+    setScore,
 }: {
     card: Card;
     setCard: React.Dispatch<React.SetStateAction<Card | null>>;
+    setScore: React.Dispatch<React.SetStateAction<number>>;
     lastCards: Card[];
 }) {
     const [oppCard, setOppCard] = useState<Card | null>(null);
@@ -27,8 +29,10 @@ export default function GameWining({
                 if (oppCard) {
                     if (Rules[oppCard].includes(card))
                         return setWiningState("LOSE");
-                    if (Rules[card].includes(oppCard))
+                    if (Rules[card].includes(oppCard)) {
+                        setScore((score) => score + 1);
                         return setWiningState("Win");
+                    }
                     return setWiningState("Draw");
                 }
             }, 1000);

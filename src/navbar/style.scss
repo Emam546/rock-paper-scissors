@@ -28,7 +28,7 @@
         .score-container{
             background-color: $white;
             border-radius: rem(5);
-            width: rem(160);
+            min-width: rem(160);
             max-width: 100%;
             min-height: rem(110);
             padding: rem(15);

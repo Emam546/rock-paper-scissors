@@ -1,5 +1,5 @@
 import "./style.scss";
-export default function NavBar() {
+export default function NavBar({score}:{score:number}) {
     return (
         <header className="header">
             <div className="container">
@@ -13,7 +13,7 @@ export default function NavBar() {
                     </div>
                     <div className="score-container">
                         <span className="head">Score</span>
-                        <span className="score">12</span>
+                        <span className="score">{score}</span>
                     </div>
                 </div>
             </div>
