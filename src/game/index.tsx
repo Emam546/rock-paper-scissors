@@ -39,7 +39,17 @@ export default function GameWining({
             <div className="boxes">
                 <div className="box">
                     <h3>YOU PICKED</h3>
-                    <div className={`box-choice ${card}`}></div>
+                    <div
+                        className={`box-choice ${card} ${
+                            winingState == "Win" && "win"
+                        }`}
+                    >
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
                 {winingState && (
                     <div className="win-lose-button">
@@ -60,7 +70,17 @@ export default function GameWining({
 
                 <div className="box">
                     <h3>THE HOUSE PICKED</h3>
-                    <div className={`box-choice ${oppCard || "empty"}`}></div>
+                    <div
+                        className={`box-choice ${oppCard || "empty"} ${
+                            winingState == "LOSE" && "win"
+                        }`}
+                    >
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
             </div>
         </section>

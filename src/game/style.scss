@@ -21,6 +21,23 @@
             @include media-break-mobile-down {
                 flex-direction: column-reverse;
             }
+            .box-choice {
+                position: relative;
+                &.win {
+                    z-index: -100;
+                    box-shadow: 0px 0px rem(50) rem(5) rgba($white, .3) ;
+                    $padding: 50;
+                    @for $i from 1 to 3 {
+                        div:nth-child(#{$i}) {
+                            position: absolute;
+                            width: calc(100% + #{rem($padding * $i)});
+                            height: calc(100% + #{rem($padding * $i)});
+                            box-shadow: 0px 0px rem(100) rem(5) rgba($white, .2) ;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
         }
         .win-lose-button {
             width: fit-content;
@@ -40,18 +57,16 @@
             }
             input {
                 min-width: none;
-                width: rem(40);
-                min-width: 100%;
+                max-width: 100%;
                 background-color: white;
                 color: $Dark-Text;
                 text-align: center;
                 font-weight: 700;
                 font-size: rrem(20);
-                padding: rem(10) rem(1);
+                padding: rem(10) rem(20);
                 border-radius: rem(5);
                 cursor: pointer;
                 user-select: none;
-                
             }
             @include media-break-mobile-down {
                 position: absolute;

@@ -11,7 +11,7 @@ function App() {
     const [card, setCard] = useState<Card | null>(null);
     const [lastCards, setLastCards] = useLocalStorage<Card[]>(["SCISSORS"], "lastCards");
     useEffect(() => {
-        if (card) setLastCards([...lastCards, card]);
+        if (card) setLastCards([...lastCards.slice(lastCards.length-20), card]);
     }, [card]);
     return (
         <>
